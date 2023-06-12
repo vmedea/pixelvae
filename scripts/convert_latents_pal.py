@@ -12,7 +12,7 @@ import safetensors.torch
 from PIL import Image
 
 from helpers.comfy_api import ComfyUIAPI
-from helpers.palette import load_palette
+from helpers.palette import load_palette, make_palette_template_image
 
 prompt = {
     "1": {
@@ -53,15 +53,6 @@ prompt = {
         "class_type": "PreviewImage"
     }
 }
-
-
-def make_palette_template_image(palette):
-    '''
-    Make an palette template image to pass to quantize.
-    '''
-    pal_img = Image.new('P', (1, 1)) # image size doesn't matter it only holds the palette
-    pal_img.putpalette(palette)
-    return pal_img
 
 
 def k_centroid_downscale(image, method=Image.Quantize.MAXCOVERAGE, factor=8, centroids=2):

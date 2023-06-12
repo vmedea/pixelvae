@@ -20,3 +20,12 @@ def get_image_colors(pal_img):
 
 def load_palette(name):
     return get_image_colors(Image.open(os.path.join(PALETTES_PATH, name + PAL_EXT)))
+
+
+def make_palette_template_image(palette):
+    '''
+    Make an palette template image to pass to quantize.
+    '''
+    pal_img = Image.new('P', (1, 1)) # image size doesn't matter it only holds the palette
+    pal_img.putpalette(palette)
+    return pal_img
