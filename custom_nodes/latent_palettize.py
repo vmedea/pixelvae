@@ -5,8 +5,6 @@ Create a palettized image from latents, using pixelvae model.
 '''
 import os
 
-import numpy as np
-from PIL import Image
 import torch
 import torch.nn as nn
 
@@ -72,20 +70,12 @@ class LatentPalettize:
         device = comfy.model_management.get_torch_device()
         model, palette = load_model(device)
         predicts = model.forward(samples["samples"].to(device))
-
-        predicts = torch.argmax(predicts, 1) # maximum score
-        predicts = predicts.cpu().numpy()
-        predicts = predicts.astype(np.uint8)
-
-        results = []
-        for prediction in predicts:
-            img = Image.fromarray(prediction)
-            img.putpalette(palette)
-            img = img.convert('RGB')
-            results.append(np.array(img))
-
-        result = np.array(results).astype(np.float32) / 255.0
-        return (torch.from_numpy(result), )
+        # maximum score index
+        predicts = torch.argmax(predicts, 1)
+        # palette lookup
+        palette = (torch.tensor(PALETTE) / 255.0).reshape((-1, 3)).to(device)
+        result = palette[predicts]
+        return (result, )
 
 
 NODE_CLASS_MAPPINGS = {
