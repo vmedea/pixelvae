@@ -2,7 +2,7 @@ from os import path
 
 comfy_url = 'http://127.0.0.1:8188/'
 comfy_root = '../../ComfyUI'
-ckpt_name = 'RetroDiffusionMegaModelV2.safetensors'
+ckpt_name = 'RetroDiffusionModelV3.safetensors'
 palette_name = 'NES'
 model_shortname = 'rd.' + palette_name
 
