@@ -13,7 +13,7 @@ Requirement for training is an existing ComfyUI installation, recent enough to h
 
 Training consists of these phases:
 
-- Edit `scripts/config.py` as needed. Put palettes in `palettes/` as needed.
+- Edit `scripts/config_pal.py` as needed. Put palettes in `palettes/` as needed.
 
 - Collect `.latent` files. This can be saved with the `_for_testing/SaveLatent` node in ComfyUI. All the latents need to be the same size.
 

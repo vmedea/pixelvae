@@ -19,7 +19,7 @@ from torch.nn import CrossEntropyLoss
 device_type: DeviceLiteral = get_device_type()
 device = torch.device(device_type)
 
-from config import palette_name, model_shortname, assets_dir, weights_dir
+from config_pal import palette_name, model_shortname, assets_dir, weights_dir
 
 palette = load_palette(palette_name)
 # note only the number of colors is used by the model training, as color indexes are used as-is from the PNG input images

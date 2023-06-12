@@ -56,7 +56,7 @@ prompt = {
 
 
 def main():
-    from config import comfy_url, comfy_root, palette_name, assets_dir, latent_size, ckpt_name
+    from config_pal import comfy_url, comfy_root, palette_name, assets_dir, latent_size, ckpt_name
     comfy = ComfyUIAPI(comfy_url)
 
     latents_in = os.path.join(comfy_root, 'input')
