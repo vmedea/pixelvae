@@ -33,7 +33,7 @@ Names can be anything, but they need to be one subdirectory deep and end with `.
 - Run `scripts/convert_latents_pal.py`. ComfyUI needs to be running for this step. This will automatically run a ComfyUI pipeline that loads each latent, and runs them through VAEDecode. Then it will scale and palettize the images. Both the images and latents are saved to the work directory. It will notice when output files already exist and not overwrite them,
 so if you want to start from scratch you need to delete the entire work directory.
 
-- Run `scripts/train_approx_decoder.py`. This will train the model and write it to `approx_vae/`.
+- Run `scripts/train_approx_decoder_pal.py`. This will train the model and write it to `approx_vae/`.
 
 ## ComfyUI custom node
 

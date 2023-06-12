@@ -6,11 +6,11 @@ from os.path import join, dirname, exists
 from torch import Tensor, IntTensor, FloatTensor, inference_mode, load, save
 from torch.optim import AdamW
 from helpers.device import get_device_type, DeviceLiteral
-from helpers.approx_vae.decoder import Decoder
-from helpers.approx_vae.dataset import get_data, Dataset
-from helpers.approx_vae.get_file_names import GetFileNames
-from helpers.approx_vae.get_latents import get_latents
-from helpers.approx_vae.get_samples import get_samples
+from helpers.approx_vae_pal.decoder import Decoder
+from helpers.approx_vae_pal.dataset import get_data, Dataset
+from helpers.approx_vae_pal.get_file_names import GetFileNames
+from helpers.approx_vae_pal.get_latents import get_latents
+from helpers.approx_vae_pal.get_samples import get_samples
 from helpers.palette import load_palette
 import numpy as np
 from PIL import Image
