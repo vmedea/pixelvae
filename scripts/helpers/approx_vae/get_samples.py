@@ -9,7 +9,7 @@ import numpy as np
 debug_resize=False
 
 # there's so few of these we may as well keep them all resident in memory
-def get_resized_samples(
+def get_samples(
   in_dir: str,
   out_dir: str,
   get_sample_filenames: GetFileNames,

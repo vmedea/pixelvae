@@ -5,7 +5,7 @@ import fnmatch
 from os import listdir
 from .get_file_names import GetFileNames
 from .get_latents import get_latents
-from .resize_samples import get_resized_samples
+from .get_samples import get_samples
 
 @dataclass
 class Dataset:
@@ -30,7 +30,7 @@ def get_data(
   )
   latents = latents.to(dtype)
 
-  samples: IntTensor = get_resized_samples(
+  samples: IntTensor = get_samples(
     in_dir=samples_dir,
     out_dir=processed_train_data_dir,
     get_sample_filenames=get_sample_filenames,

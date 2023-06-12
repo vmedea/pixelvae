@@ -10,7 +10,7 @@ from helpers.approx_vae.decoder import Decoder
 from helpers.approx_vae.dataset import get_data, Dataset
 from helpers.approx_vae.get_file_names import GetFileNames
 from helpers.approx_vae.get_latents import get_latents
-from helpers.approx_vae.resize_samples import get_resized_samples
+from helpers.approx_vae.get_samples import get_samples
 from helpers.palette import load_palette
 import numpy as np
 from PIL import Image
@@ -82,7 +82,7 @@ def test(palette):
   )
   latents = latents.to(training_dtype)
 
-  true_samples: IntTensor = get_resized_samples(
+  true_samples: IntTensor = get_samples(
     in_dir=test_samples_dir,
     out_dir=processed_test_data_dir,
     get_sample_filenames=get_sample_filenames,
